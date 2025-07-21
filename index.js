@@ -8,6 +8,7 @@ const projectRoutes = require("./routes/projectRoutes");
 const clientRoutes = require("./routes/clientRoutes");
 const contactRoutes = require("./routes/contactFormRoutes");
 const subscriberRoutes = require("./routes/subscriberRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 
 
@@ -27,6 +28,10 @@ app.use("/api/projects", projectRoutes);
 app.use("/api/clients", clientRoutes);
 app.use("/api/contacts", contactRoutes);
 app.use("/api/subscribers", subscriberRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/dev", require("./routes/devCreateAdmin"));
+
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
